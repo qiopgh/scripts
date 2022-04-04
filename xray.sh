@@ -838,7 +838,7 @@ installXray() {
     mkdir -p /usr/local/etc/xray /usr/local/share/xray && \
     unzip /tmp/xray/xray.zip -d /tmp/xray
     cp /tmp/xray/xray /usr/local/bin
-    cp /tmp/xray/geo* /usr/local/share/xray
+    cp /tmp/xray/geo*.dat /usr/local/share/xray
     chmod +x /usr/local/bin/xray || {
         colorEcho $RED " Xray安装失败"
         exit 1
