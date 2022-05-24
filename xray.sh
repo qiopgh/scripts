@@ -281,7 +281,7 @@ getData() {
             CERT_FILE="/usr/local/etc/xray/${DOMAIN}.pem"
             KEY_FILE="/usr/local/etc/xray/${DOMAIN}.key"
         else
-            resolve=`curl -sL https://hijk.art/hostip.php?d=${DOMAIN}`
+            resolve=`curl -sL http://119.29.29.29/d?dn=${domain}`
             res=`echo -n ${resolve} | grep ${IP}`
             #if [[ -z "${res}" ]]; then
                 #colorEcho ${BLUE}  "${DOMAIN} 解析结果：${resolve}"
@@ -289,7 +289,7 @@ getData() {
                 #exit 1
             fi
         fi
-    #fi
+    fi
 
     echo ""
     if [[ "$(needNginx)" = "no" ]]; then
