@@ -283,10 +283,10 @@ getData() {
         else
             resolve=`curl -sL http://119.29.29.29/d?dn=${domain}`
             res=`echo -n ${resolve} | grep ${IP}`
-            #if [[ -z "${res}" ]]; then
-                #colorEcho ${BLUE}  "${DOMAIN} 解析结果：${resolve}"
-                #colorEcho ${RED}  " 域名未解析到当前服务器IP(${IP})!"
-                #exit 1
+            if [[ -z "${res}" ]]; then
+                colorEcho ${BLUE}  "${DOMAIN} 解析结果：${resolve}"
+                colorEcho ${RED}  " 域名未解析到当前服务器IP(${IP})!"
+                exit 1
             fi
         fi
     fi
